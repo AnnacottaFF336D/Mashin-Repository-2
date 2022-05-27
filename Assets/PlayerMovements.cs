@@ -49,7 +49,6 @@ public class PlayerMovements : MonoBehaviour
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
-        MyInput();
         SpeedControl();
 
         // handle drag
@@ -63,14 +62,11 @@ public class PlayerMovements : MonoBehaviour
     {
         MovePlayer();
     }
-
-    private void MyInput()
+    private void OnJump()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        horizontalInput = moveInput.x;
+        verticalInput = moveInput.y;
+        if (readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -79,6 +75,7 @@ public class PlayerMovements : MonoBehaviour
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
+    
 
     private void MovePlayer()
     {
