@@ -14,7 +14,7 @@ public class PlayerMovements : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    bool readyToJump;
+    [SerializeField] bool readyToJump;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -25,7 +25,7 @@ public class PlayerMovements : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    [SerializeField] bool grounded;
 
     public Transform orientation;
 
@@ -66,7 +66,8 @@ public class PlayerMovements : MonoBehaviour
     {
         horizontalInput = moveInput.x;
         verticalInput = moveInput.y;
-        if (readyToJump && grounded)
+            Debug.Log("JUMP");
+        if (readyToJump /*&& grounded*/)
         {
             readyToJump = false;
 
@@ -81,22 +82,29 @@ public class PlayerMovements : MonoBehaviour
     {
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        //Debug.Log(moveDirection);
 
         // on ground
-        if (grounded)
+        //if (grounded)
+            
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
-        else if (!grounded)
+        if (!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
-
-    private void OnMove(InputValue value)
+    void OnMove(InputValue value)
     {
+        Debug.Log(value.Get<Vector2>());
         moveInput = value.Get <Vector2>();
-        moveInput.x = moveInput.x * Time.deltaTime;
-        moveInput.y = moveInput.y * Time.deltaTime;
+        horizontalInput = moveInput.x * Time.deltaTime;
+        verticalInput = moveInput.y * Time.deltaTime;
     }
+    /*private void OnMove(InputValue value)
+
+    {
+    }*/
+
 
     private void SpeedControl()
     {
