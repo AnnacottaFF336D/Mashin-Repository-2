@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor Tile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 59970719170931425, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4094895824993449451, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -447,6 +451,10 @@ PrefabInstance:
     - target: {fileID: 4094895824993449451, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992478662178897583, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
@@ -805,6 +813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor Tile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 59970719170931425, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4094895824993449451, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -849,6 +861,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5992478662178897583, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
 --- !u!4 &1966049474 stripped
@@ -866,6 +882,10 @@ PrefabInstance:
     - target: {fileID: 59970719170931425, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
       propertyPath: m_Name
       value: Floor Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 59970719170931425, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4094895824993449451, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
       propertyPath: m_RootOrder
@@ -910,6 +930,10 @@ PrefabInstance:
     - target: {fileID: 4094895824993449451, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992478662178897583, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb17e087dcc52b468049f6869c3ef6c, type: 3}

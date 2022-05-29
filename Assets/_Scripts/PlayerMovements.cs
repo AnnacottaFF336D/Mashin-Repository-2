@@ -41,6 +41,8 @@ public class PlayerMovements : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
+        playerHeight = transform.lossyScale.y;
+
         readyToJump = true;
     }
 
@@ -67,7 +69,7 @@ public class PlayerMovements : MonoBehaviour
         horizontalInput = moveInput.x;
         verticalInput = moveInput.y;
             Debug.Log("JUMP");
-        if (readyToJump /*&& grounded*/)
+        if (readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -85,13 +87,13 @@ public class PlayerMovements : MonoBehaviour
         //Debug.Log(moveDirection);
 
         // on ground
-        //if (grounded)
             
+        if (grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
         // in air
-        if (!grounded)
+        else
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+
     }
     void OnMove(InputValue value)
     {
@@ -100,12 +102,6 @@ public class PlayerMovements : MonoBehaviour
         horizontalInput = moveInput.x * Time.deltaTime;
         verticalInput = moveInput.y * Time.deltaTime;
     }
-    /*private void OnMove(InputValue value)
-
-    {
-    }*/
-
-
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -117,7 +113,6 @@ public class PlayerMovements : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
-
     private void Jump()
     {
         // reset y velocity
