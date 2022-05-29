@@ -738,7 +738,7 @@ MonoBehaviour:
   playerHeight: 0
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   grounded: 0
   orientation: {fileID: 337129521}
 --- !u!114 &1442801207
