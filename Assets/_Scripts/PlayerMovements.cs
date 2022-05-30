@@ -10,6 +10,8 @@ public class PlayerMovements : MonoBehaviour
 
     public float groundDrag;
 
+    public float wallrunSpeed;
+
     public Vector2 moveInput;
     public float jumpForce;
     public float jumpCooldown;
@@ -35,6 +37,37 @@ public class PlayerMovements : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+    public MovementState state;
+    public enum MovementState
+    {
+        walking,
+        sprinting,
+        wallrunning,
+        crouching,
+        sliding,
+        air
+    }
+
+    public bool sliding;
+    public bool crouching;
+    public bool wallrunning;
+    
+    private void StateHandler()
+    {
+        //Mode Wallrunning
+        if (wallrunning)
+        {
+            state = MovementState.wallrunning;
+            moveSpeed = wallrunSpeed;
+        }
+
+
+
+    }
+
+
+
 
     private void Start()
     {
